@@ -1,0 +1,31 @@
+.list {
+  list-style: square;
+}
+
+.name {
+  margin-right: 10px;
+}
+
+.number {
+  color: cornflowerblue;
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.button {
+  background-color: #ffffff;
+  color: rgba(94, 95, 97, 0.952);
+  border: 1px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(104, 166, 218);
+  color: #ffffff;
+  border: 1px solid rgb(104, 166, 218);
+}
