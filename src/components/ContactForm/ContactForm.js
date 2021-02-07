@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import operations from '../../redux/operations';
-import { getContacts } from '../../redux/selectors';
+import operations from '../../redux/contacts/contacts-operations';
+import { getContacts } from '../../redux/contacts/contacts-selectors';
 
 import s from './ContactForm.module.css';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 function ContactForm() {
   const [name, setName] = useState('');
@@ -36,33 +38,39 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={s.form}>
-      <label className={s.formLabel}>
-        Name
-        <input
+    <div className={s.container}>
+      <form onSubmit={handleSubmit} className={s.form}>
+        <TextField
+          id="standard-basic"
+          label="Name"
           type="text"
           value={name}
           name="name"
           className={s.formInput}
-          placeholder=" "
           onChange={handleNameChange}
         />
-      </label>
-      <label className={s.formLabel}>
-        Number
-        <input
+
+        <TextField
+          id="standard-basic"
+          label="Number"
           type="tel"
           value={number}
           name="number"
           className={s.formInput}
-          placeholder=" "
           onChange={handleNumberChange}
         />
-      </label>
-      <button type="submit" className={s.button}>
-        Add contact
-      </button>
-    </form>
+
+        <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          size="small"
+          className={s.button}
+        >
+          Add contact
+        </Button>
+      </form>
+    </div>
   );
 }
 

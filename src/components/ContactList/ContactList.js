@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getFilteredContacts } from '../../redux/selectors';
-import operations from '../../redux/operations';
+import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
+import operations from '../../redux/contacts/contacts-operations';
 
 import s from './ContactList.module.css';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 
 function ContactList() {
   const contacts = useSelector(getFilteredContacts);
@@ -20,9 +22,16 @@ function ContactList() {
           <li key={id} className={s.listItem}>
             <span className={s.name}>{name}:</span>
             <span className={s.number}>{number}</span>
-            <button className={s.button} onClick={() => onDeleteContact(id)}>
+
+            <Button
+              variant="contained"
+              color="default"
+              size="small"
+              onClick={() => onDeleteContact(id)}
+              className={s.button}
+            >
               Delete
-            </button>
+            </Button>
           </li>
         );
       })}

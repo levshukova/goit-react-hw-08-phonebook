@@ -1,5 +1,7 @@
 .list {
   list-style: square;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .name {
@@ -17,10 +19,6 @@
 }
 
 .button {
-  background-color: #ffffff;
-  color: rgba(94, 95, 97, 0.952);
-  border: 1px solid gray;
-  border-radius: 4px;
   cursor: pointer;
 }
 
